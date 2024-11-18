@@ -1,8 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is built using Nextjs. With Tailwind css for fast prototyping. I have included TypeScript, Storybook and some simple unit tests using Jest. Used Motion for page load animations and css for hovers. I added a data.json file to use as content so component works accoringly. Component is accessible and responsive.
 
-## Getting Started
+A couple of things I would've liked to do is to do it add a fallback image/container to the image and possibly spend more time on the animations.
 
-First, run the development server:
+You can view the component here: https://card-list-rosy.vercel.app/
+
+And run the project by following these steps:
 
 ```bash
 npm run dev

@@ -40,9 +40,15 @@ export const Card = ({ data, ...props }: CardProps) => {
         />
       </div>
       <div className="p-6 flex flex-col gap-6 grow">
+      {subTitle && (
         <p className="subTitle text-gray-900">{subTitle}</p>
+      )}
+      {title && (
         <h3 className={variant === "primary" ? "text-orange" : "text-purple"}>{title}</h3>
+      )}
+      {content && (
         <p>{content}</p>
+      )}
         {url && (
           <div className="flex justify-end mt-auto">
             <Button

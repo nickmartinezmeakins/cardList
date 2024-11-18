@@ -16,6 +16,7 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "@storybook/addon-a11y": "^8.4.4",
     "motion": "^11.11.17",
     "next": "15.0.3",
     "plop": "^4.0.1",

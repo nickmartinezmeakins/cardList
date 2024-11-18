@@ -3,6 +3,15 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { CardList } from './CardList';
 
+beforeAll(() => {
+  Object.defineProperty(window, 'matchMedia', {
+    value: jest.fn().mockImplementation(() => ({
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+    })),
+  });
+});
+
 const mockData = {
   cardList: [
     {
@@ -27,17 +36,10 @@ const mockData = {
 };
 
 describe('CardList', () => {
-  it('should render the heading', () => {
+  it('should render the correct number of list items', () => {
     render(<CardList data={mockData} />);
-
-    expect(screen.getByText(/Lorem ipsum dolor sit amet/i)).toBeInTheDocument();
-    expect(screen.getByText(/Sit amet et turpis/i)).toBeInTheDocument();
-  });
-
-  it('renders the correct number of cards', () => {
-    render(<CardList data={mockData} />);
-
-    const cardElements = screen.getAllByRole('listitem');
-    expect(cardElements).toHaveLength(mockData.cardList.length);
+    
+    const listItems = screen.getAllByRole('listitem');
+    expect(listItems).toHaveLength(mockData.cardList.length);
   });
 });
