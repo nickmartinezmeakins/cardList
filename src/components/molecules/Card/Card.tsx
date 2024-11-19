@@ -27,9 +27,9 @@ export const Card = ({ data, ...props }: CardProps) => {
   return (
     <div
       {...props}
-      className={`bg-black-200 rounded-4xl overflow-hidden h-full flex flex-col transition-transform transform hover:-translate-y-4 hover:shadow-[0_35px_60px_-15px_rgba(255,255,255,0.05)] ${variant}`}
+      className={`bg-black-200 rounded-4xl overflow-hidden h-full flex flex-col transition-transform transform hover:-translate-y-4 hover:shadow-[0_35px_60px_-15px_rgba(255,255,255,0.05)] group ${variant}`}
     >
-      <div className="relative h-80 w-full">
+      <div className="relative h-80 w-full overflow-hidden">
         <Image
           src={imageSrc}
           fill={true}
@@ -37,6 +37,7 @@ export const Card = ({ data, ...props }: CardProps) => {
           alt={title}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={true}
+          className="group-hover:scale-110 transition ease-in-out duration-300"
         />
       </div>
       <div className="p-6 flex flex-col gap-6 grow">
